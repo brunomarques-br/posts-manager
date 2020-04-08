@@ -20,7 +20,7 @@ public class DevConfig {
         this.dbService = dbService;
     }
 
-    /*criando um pattern strategy para controle na criação da base de dados.*/
+    /*Creating a pattern strategy to control in creation of a database.*/
     @Value("${spring.jpa.hibernate.ddl-auto}")
     private String strategy;
 

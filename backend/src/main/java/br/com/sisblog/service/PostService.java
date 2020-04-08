@@ -36,7 +36,7 @@ public class PostService {
 
         Optional<Post> optPost = repo.findById(id);
         return optPost.orElseThrow(() -> new ObjectNotFoundException(
-                "Objeto não encontrado! Id: " + id + ", Tipo: " + Post.class.getName()));
+                "Object not found! Id: " + id + ", Type: " + Post.class.getName()));
     }
 
     public List<Post> findAll() {
@@ -51,11 +51,11 @@ public class PostService {
         return repo.save(post);
     }
 
-/**
- * Pode alterar somenmte o Título e conteúdo da postagem.
- * @param oldPost
- * @return
- */
+
+    /**
+     * @param oldPost
+     * @return
+     */
     public Post update(Post oldPost) {
         Post newPost = find(oldPost.getId());
         newPost.setTitle(oldPost.getTitle() == null ? newPost.getTitle() : oldPost.getTitle());
@@ -69,7 +69,7 @@ public class PostService {
             repo.deleteById(id);
         } catch (DataIntegrityViolationException err) {
             throw new DataIntegrityException(
-                    "Não é possível excluir um cliente que possua endereço e pedidos vinculados.");
+                    "You cannot delete a customer that has an address and linked orders.");
         }
     }
 

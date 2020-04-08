@@ -26,7 +26,6 @@ public class PostResource {
     /**
      * @TODO
      * Implementar a conversão do DTO na requisição e resposta
-     * Implementar o endpoint paginado.
      *  */ 
 
     @Autowired
@@ -34,15 +33,15 @@ public class PostResource {
 
     @GetMapping(value = "/")
     public ResponseEntity<List<Post>> findAll() {
-        List<Post> Posts = service.findAll();
-        List<Post> PostsDTO = Posts.stream().map(obj -> new Post(obj)).collect(Collectors.toList());
-        return ResponseEntity.ok().body(PostsDTO);
+        List<Post> posts = service.findAll();
+        List<Post> postsDTO = posts.stream().map(Post::new).collect(Collectors.toList());
+        return ResponseEntity.ok().body(postsDTO);
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Post> find(@PathVariable Integer id) {
-        Post Post = service.find(id);
-        return ResponseEntity.ok().body(Post);
+        Post post = service.find(id);
+        return ResponseEntity.ok().body(post);
     }
 
     @PostMapping

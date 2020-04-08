@@ -26,7 +26,6 @@ public class UserResource {
     /**
      * @TODO
      * Implementar a conversão do DTO na requisição e resposta
-     * Implementar o endpoint paginado.
      *  */ 
 
     @Autowired
@@ -35,7 +34,7 @@ public class UserResource {
     @GetMapping(value = "/")
     public ResponseEntity<List<User>> findAll() {
         List<User> users = service.findAll();
-        List<User> usersDTO = users.stream().map(obj -> new User(obj)).collect(Collectors.toList());
+        List<User> usersDTO = users.stream().map(User::new).collect(Collectors.toList());
         return ResponseEntity.ok().body(usersDTO);
     }
 

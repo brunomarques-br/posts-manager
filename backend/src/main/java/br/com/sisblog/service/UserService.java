@@ -31,7 +31,7 @@ public class UserService {
 
         Optional<User> optUser = repo.findById(id);
         return optUser.orElseThrow(() -> new ObjectNotFoundException(
-                "Objeto não encontrado! Id: " + id + ", Tipo: " + User.class.getName()));
+                "Object not found! Id: " + id + ", Type: " + User.class.getName()));
     }
 
     public List<User> findAll() {
@@ -57,7 +57,7 @@ public class UserService {
             repo.deleteById(id);
         } catch (DataIntegrityViolationException err) {
             throw new DataIntegrityException(
-                    "Não é possível excluir um cliente que possua endereço e pedidos vinculados.");
+                    "You cannot delete a customer that has an address and linked orders.");
         }
     }
 

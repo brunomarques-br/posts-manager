@@ -43,10 +43,10 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<Post> posts = new ArrayList<>();
 
-    public User(User usuario) {
-        this.id = usuario.getId();
-        this.name = usuario.getName();
-        this.email = usuario.getEmail();
+    public User(User objUser) {
+        this.id = objUser.getId();
+        this.name = objUser.getName();
+        this.email = objUser.getEmail();
     }
 
     public User(Integer id, String name, String email) {

@@ -18,32 +18,35 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    
+
+    private static final String MATCHERS_USERS = "/users/**";
+    private static final String MATCHERS_POSTS = "/posts/**";
+
     @Autowired
-    private Environment environment; 
+    private Environment environment;
 
     private static final String[] PUBLIC_MATCHERS = {
             "/h2-console/**"
     };
-    
+
     private static final String[] PUBLIC_MATCHERS_GET = {
-            "/users/**",
-            "/posts/**"
+            MATCHERS_USERS,
+            MATCHERS_POSTS
     };
 
     private static final String[] PUBLIC_MATCHERS_POST = {
-            "/users/**",
-            "/posts/**"
+            MATCHERS_USERS,
+            MATCHERS_POSTS
     };
 
     private static final String[] PUBLIC_MATCHERS_PUT = {
-            "/users/**",
-            "/posts/**"
+            MATCHERS_USERS,
+            MATCHERS_POSTS
     };
 
     private static final String[] PUBLIC_MATCHERS_DELETE = {
-            "/users/**",
-            "/posts/**"
+            MATCHERS_USERS,
+            MATCHERS_POSTS
     };
 
     @Override
@@ -54,7 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         }
 
         http.cors().and().csrf().disable();
-        
+
         http.authorizeRequests()
                 .antMatchers(HttpMethod.POST, PUBLIC_MATCHERS_POST).permitAll()
                 .antMatchers(HttpMethod.GET, PUBLIC_MATCHERS_GET).permitAll()
