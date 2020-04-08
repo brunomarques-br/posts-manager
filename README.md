@@ -1,63 +1,62 @@
-<h1>Sistema Blog Web</h1>
+<h1>Posts Manager</h1>
 
 Backend: 
 	- Java 8 (Springboot)
-		- Lombok (encapsulamento)
+		- Lombok (To minimizer getter and setters)
 	- Mysql (5.7) (docker-composer)
-	- API Resfull 
-	- Documentação da API com SWAGGER (Utilizando data tansfer object)
+	- API Restful
 
 Frontend:
 	- React.js
 		- react-icons
 		- react-dom
 		- react-router-dom
-	- Axios.js (consumir API Restfull)
+	- Axios.js (Consuming a Restful API)
 
 	
-<h2>Descrição - Backend</h2>
+<h2>Description - Backend</h2>
 
-* API básica que disponibiliza endpoints para operações de CRUD entre Posts e Usuários
+* Basic API that provides endpoints for CRUD operations between Posts and Users
 
-<h2>Descrição - FrontEnd</h2>
+<h2>Description - FrontEnd</h2>
 
-* Consumir a API restfull em Java 8 (Stringboot) através de autenticação JWT (<i>Desenvolvimento</i>) e guardando o estado da sessão para executar as funcionalidades do backend.
+* Consume the restfull API in Java 8 (Stringboot) through JWT authentication (<i> Development </i>) and saving the session state to execute the backend functionalities.
 
-<h1>Funcionalidades</h1>
+<h1>Functionalities</h1>
 
-* Usuário / Autor:
-	- Criar
-	- Alterar
-	- Excluir
-	- Detalhes
-	- Consulta Paginada (todos autores)
+* User / Author:
+	- Insert
+	- Update
+	- Delete
+	- Details
 
 * Posts: 
-	- Criar
-	- Alterar
-	- Excluir
-	- Detalhes
-	- Listar todos os Posts (paginado)
-	- Listar todos os Posts do Autor (paginado)
+	- Insert
+	- Update
+	- Delete
+	- Details
 
 ##############
 
--- Primeiro acesso (tenha o docker-composer configurado em sua máquina)
--- Executar dentro da pasta `/backend` do projeto
+<h1>How to run a docker for a Mysql database</h1>
+
+<h3>First step</h3> 
+* <h5>(You need to install and configure a `docker-composer`)</h5>
+* <h5>Execute inside in folder `/backend` these commands : </h5> 
 
 `$ docker-compose up -d `
 
 `$ sudo docker run --name=backend_bd_1 -d`
 `$ sudo docker logs backend_bd_1`
 
--- Conectar 
+<h3>How to connect with terminal</h3> 
 `$ sudo docker exec -it backend_bd_1 mysql -uroot -p`
 
--- Parâmetros Default
-Base de dados Mysql 5.7 (docker-compose.yml)
-base: dbBlogWeb
-usuario: root
-senha: q1w2e3r4t5
+<h3>Default parameters</h3>
+* Base de dados Mysql 5.7 (docker-compose.yml)
+* base: dbBlogWeb
+* usuario: root
+* senha: q1w2e3r4t5
 
 
 
