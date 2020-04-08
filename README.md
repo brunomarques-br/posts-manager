@@ -41,8 +41,10 @@ Frontend:
 <h1>How to run a docker for a Mysql database</h1>
 
 <h3>First step</h3> 
-* <h5>(You need to install and configure a `docker-composer`)</h5>
-* <h5>Execute inside in folder `/backend` these commands : </h5> 
+
+* (You need to install and configure a `docker-composer`)
+
+* Execute inside in folder `/backend` these commands : 
 
 `$ docker-compose up -d `
 
