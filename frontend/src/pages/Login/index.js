@@ -16,7 +16,7 @@ export default function Login() {
 
                     <h1>Área Restrita</h1>
 
-                    <input placeholder="Sua Identificação" />
+                    <input type="email" placeholder="E-mail" />
 
                     <button className="button" type="submit">Acessar</button>
 

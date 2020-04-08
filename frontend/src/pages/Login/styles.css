@@ -9,21 +9,25 @@
 }
 
 .login-container section.form{
-    width: 100%;
+    width: 50%;
     height: 350px;
     margin-left: 50px;
 }
 
 .login-container section.form form{
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
-.login-container section.form form h1{
-    font-size: 32px;
-    margin-bottom: 32px;
+.login-container section.form form input + input{
+    margin-top:20px;
+}
+
+.login-container section.form form h1 {
+    font-size: 44px;
+    margin-bottom: 15px;
+    font-weight: normal;
 }
 
 .login-container img{
     width: 35%;
-    margin-top:70px;
 }

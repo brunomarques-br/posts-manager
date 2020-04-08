@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Incident from './pages/Incident';
-import DetailIncident from './pages/DetailIncident';
+import ListIncident from './pages/ListIncident';
 
 export default function Routes() {
     return (
@@ -13,7 +13,7 @@ export default function Routes() {
                 <Route exact path="/" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/incident/new" component={Incident} />
-                <Route path="/incident/detail" component={DetailIncident} />
+                <Route path="/incident/list" component={ListIncident} />
             </Switch>
         </BrowserRouter>
     );
